@@ -5,9 +5,43 @@
     <title>HelloWorld.......</title>
 </head>
 <body>
-    <div>你好html</div>
+    <div id="title">你好html</div>
 
+    <form>
+
+    </form>
+    <div>
+        <button id="button">OK</button>
+    </div>
+    <div id="from">
+        this is a string.
+    </div>
+    <div id="to">
+        hehe
+    </div>
+    <button onclick="move()">移位</button>
     <script type='text/javascript' src="../js/jquery-3.3.1.min.js"></script>
     <script type='text/javascript' src="../js/mui.min.js"></script>
+    <script>
+        var jd = $.noConflict();
+    </script>
+    <script>
+        jd(function () {
+            jd("#title").html("666666666666");
+        })
+
+        jd("#button").click(function () {
+            jd("#title").html("233333333");
+        });
+    </script>
+
+    //把from标签里的内容填写到to标签里
+    <script>
+        function move() {
+            //var text = jd("#from").text();
+            var text = jd("#from").html();
+            jd("#to").html(text);
+        }
+    </script>
 </body>
 </html>
