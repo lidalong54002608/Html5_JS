@@ -35,13 +35,29 @@
         });
     </script>
 
-    //把from标签里的内容填写到to标签里
+    <!--把from标签里的内容填写到to标签里-->
     <script>
         function move() {
             //var text = jd("#from").text();
             var text = jd("#from").html();
             jd("#to").html(text);
         }
+    </script>
+
+    <!--Ajax 请求-->
+    <script>
+        jd.ajax({
+            type : "POST",
+            url : "http://www.baidu.com",
+            data : {username : "sanji", id : "6666"},
+            dataType : "json",
+            success : function () {
+                jd("#to").html("ajax success");
+            },
+            error : function () {
+                jd("#to").html("ajax error");
+            }
+        });
     </script>
 </body>
 </html>
