@@ -59,5 +59,14 @@
             }
         });
     </script>
+    <script>
+        <!-- 获取页面跳转时所带的参数 -->
+        function getQueryString(name) {
+            console.log("....."+location.search);
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search);
+            return results == null ? "": decodeURIComponent(results[1]);
+        }
+    </script>
 </body>
 </html>
