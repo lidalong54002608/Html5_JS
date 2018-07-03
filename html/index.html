@@ -19,7 +19,7 @@
     <div id="to">
         hehe
     </div>
-    <button onclick="move()">移位</button>
+    <button onclick=getEval()>移位</button>
     <script type='text/javascript' src="../js/jquery-3.3.1.min.js"></script>
     <script type='text/javascript' src="../js/mui.min.js"></script>
     <script>
@@ -66,6 +66,11 @@
             name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
             var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search);
             return results == null ? "": decodeURIComponent(results[1]);
+        }
+        var src = "{\"address\":\"南京市浦口区江浦街道经济开发区30号\",\"month\":\"04\",\"name_str\":\"刘德华\",\"day\":\"21\",\"nation\":\"汉\",\"num\":\"320323198704215153\",\"sex\":\"男\",\"year\":\"1987\"}"
+        function getEval() {
+            var dest = eval('('+src+')');
+            jd("#to").html(dest.address);
         }
     </script>
 </body>
